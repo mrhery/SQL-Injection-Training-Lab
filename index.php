@@ -104,7 +104,7 @@ SQL);
 			natsort($dirs);
 			
 			foreach($dirs as $dir){
-				if(!in_array($dir, [".", "..", ".git", ".gitattributes", "README.md", "configure.json", "assets", "index.php", "core"])){
+				if(!in_array($dir, [".", "..", ".git", ".gitignore", ".gitattributes", "README.md", "configure.json", "assets", "index.php", "core"])){
 					echo "<a href='./$dir' class='mb-2 fs-5' target='_blank'>" . $dir . "</a><br />";
 				}
 			}
