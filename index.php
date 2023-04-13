@@ -1,6 +1,7 @@
 <?php
 
 
+$error = [];
 
 if(file_exists(__DIR__ . "/configure.json")){
 	if(!defined("DONE")){
@@ -8,8 +9,6 @@ if(file_exists(__DIR__ . "/configure.json")){
 	}
 }else{
 	if(isset($_POST["host"], $_POST["port"], $_POST["username"], $_POST["password"])){
-		$error = [];
-		
 		$config = [
 			"host"		=> $_POST["host"],
 			"port"		=> $_POST["port"],
