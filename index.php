@@ -80,7 +80,7 @@ SQL);
 <body>
 
 <div class="container pt-4">
-	<h1>Welcome!</h1>
+	<h1>Welcome to SQL Injection Lab Training!</h1>
 <?php
 	if(defined("DONE")){
 	?>
