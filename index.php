@@ -97,7 +97,12 @@ SQL);
 		<div class="card-body">
 		<h4>Available Levels:</h4>
 		<?php
-			$dirs = scandir(__DIR__);
+			$dirs = [];
+			foreach (scandir(__DIR__) as $d) {
+				$dirs[] = $d;
+			}
+			
+			natsort($dirs);
 			
 			foreach($dirs as $dir){
 				if(!in_array($dir, [".", "..", ".git", ".gitattributes", "README.md", "configure.json", "assets", "index.php", "core"])){
