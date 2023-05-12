@@ -1,6 +1,7 @@
 <?php
 
 
+$error = [];
 
 if(file_exists(__DIR__ . "/configure.json")){
 	if(!defined("DONE")){
@@ -8,8 +9,6 @@ if(file_exists(__DIR__ . "/configure.json")){
 	}
 }else{
 	if(isset($_POST["host"], $_POST["port"], $_POST["username"], $_POST["password"])){
-		$error = [];
-		
 		$config = [
 			"host"		=> $_POST["host"],
 			"port"		=> $_POST["port"],
@@ -81,7 +80,7 @@ SQL);
 <body>
 
 <div class="container pt-4">
-	<h1>Welcome!</h1>
+	<h1>Welcome to SQL Injection Lab Training!</h1>
 <?php
 	if(defined("DONE")){
 	?>
@@ -105,7 +104,7 @@ SQL);
 			natsort($dirs);
 			
 			foreach($dirs as $dir){
-				if(!in_array($dir, [".", "..", ".git", ".gitattributes", "README.md", "configure.json", "assets", "index.php", "core"])){
+				if(!in_array($dir, [".", "..", ".git", ".gitignore", ".gitattributes", "README.md", "configure.json", "assets", "index.php", "core"])){
 					echo "<a href='./$dir' class='mb-2 fs-5' target='_blank'>" . $dir . "</a><br />";
 				}
 			}
