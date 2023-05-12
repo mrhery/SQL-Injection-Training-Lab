@@ -12,7 +12,9 @@ if(!isset($_GET["limit"])){
 
 $limit = $_GET["limit"];
 
-$q = mysqli_query($conn, "SELECT * FROM users LIMIT " . $limit);
+$sql = "SELECT * FROM users LIMIT " . $limit;
+
+$q = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +31,18 @@ $q = mysqli_query($conn, "SELECT * FROM users LIMIT " . $limit);
 	
 	<h4>User Profile</h4>
 <?php
+	$e = mysqli_error($conn);
+	
+	print_r($e);
+	
 	while($r = mysqli_fetch_object($q)){
 ?>
 	Name: <?= $r->name ?> | Email: <?= $r->email ?><br />
 <?php
 	}
 ?>
+
+	<pre class="mt-5"><?= $sql ?></pre>
 </div>
 </body>
 </html>
