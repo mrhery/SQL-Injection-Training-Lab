@@ -36,6 +36,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'sqli'@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 ```
 (SQL Command might differs depend on your MySQL version)
+
 9. Go to "http://localhost/SQL-Injection-Training-Lab"
 10. Insert your created database user "sqli" with password "password"
 11. Click on "Submit", then you are good to go
